@@ -5,6 +5,7 @@ class CreateOpportunities < ActiveRecord::Migration[5.2]
       t.integer :organization_id
       t.string :gender
       t.string :description
+      t.string :location
       t.datetime :dateOfEvent
 
       t.timestamps

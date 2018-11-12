@@ -1,2 +1,26 @@
-<h1>Opportunities#show</h1>
-<p>Find me in app/views/opportunities/show.html.erb</p>
+<h1> <%= @opportunity.name %> Event Page</h1>
+
+<p> Creator: <%= @opportunity.user.name %> </p>
+
+<p> Name: <%= @opportunity.name %> </p>
+
+<p> Description: <%= @opportunity.description %> </p>
+
+<p> Date of event: <%= @opportunity.dateOfEvent.strftime("%Y-%m-%d") %> </p>
+
+<p> Location: <%= @opportunity.location %> </p>
+
+<% if user_signed_in? && current_user.admin == true %>
+    <%= link_to 'Delete opportunity', @opportunity, method: :delete %>
+<% end %>
+
+<%= render partial: 'app' %>
+
+
+<h3>Volunteer List :</h3>
+
+<ul>
+    <% @opportunity.app_users.each do |app| %>
+        <li><%= link_to app.user.name, user_path(app) %></li>
+    <% end %>
+</ul>

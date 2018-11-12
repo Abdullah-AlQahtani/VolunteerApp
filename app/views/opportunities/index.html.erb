@@ -1,10 +1,9 @@
 <h2>All opprtunities List</h2>
 
-    
 <ul>
-    <% @opportunities.each do |opprtunity| %>
+    <% @opportunities.each do |opportunity| %>
         <li>
-       <%= link_to opprtunity.name, opprtunity_path(opprtunity) %>
+       <%= link_to opportunity.name, opportunity_path(opportunity) %>
         </li>
     <% end %>
 </ul>

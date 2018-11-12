@@ -17,8 +17,7 @@
 
 <br>
 
-
-  <div class="field">
+<div class="field">
   <%= f.label :gender %><br />
   <%= f.select :gender, ['Male', 'Female']%>
 </div>
@@ -52,6 +51,18 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
+<br>
+
+<div class="field">
+  <%= f.label :userType %><br />
+  <%= f.select :userType, ['organization', 'volunteer']%>
+</div>
+
+    <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+
 <br>
   <div class="actions">
     <%= f.submit "Sign up" %>

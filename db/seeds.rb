@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Opportunity.destroy_all
+
+
+Opportunity.create(name: "first opp", gender: "Both", description: "some cool opppere", location: "", dateOfEvent: Time.now, user_id: 6)

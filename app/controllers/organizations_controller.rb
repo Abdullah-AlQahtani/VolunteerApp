@@ -1,37 +1,26 @@
 class OrganizationsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_if_admin, only: [:edit, :new]
+
+
   def index
-    @organizations =  Organization.all
+    @organizations =  User.where(userType: "organization")
   end
 
   def show
-    @organization = Organization.find_by(id: params[:id])
+    @organization = User.find_by(id: params[:id])
   end
 
   def edit
-    @organization = Organization.find_by(id: params[:id])
+    @organization = User.find_by(id: params[:id])
   end
 
-  def new
-    @organization = Organization.new
-  end
-
-  def create
-    organization = Organization.create organization_params
-    redirect_to organization_path(organization)
-  end
-  
-  def update
-    organization = Organization.update organization_params
-    redirect_to organization_path(organization)
-  end
-
-  def destroy
-    organization = Organization.find_by(id: params[:id])
-    organization.destroy
-    redirect_to organizations_path
-  end
 
   private
+
+  def check_if_admin
+    redirect_to root_path unless user_signed_in? && current_user.admin == true
+  end
 
   def organization_params
     params.require(:organization).permit(:name, :website, :address)

@@ -13,8 +13,14 @@
 
 <br>
 
+<div class="field">
+  <%= f.label :userType, "User Type:" %><br />
+  <%= f.select :userType, ['organization', 'volunteer']%>
+</div> 
 
-  <div class="field">
+<br>
+
+<div class="field">
   <%= f.label :gender %><br />
   <%= f.select :gender, ['Male', 'Female']%>
 </div>

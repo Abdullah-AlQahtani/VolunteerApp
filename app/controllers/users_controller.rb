@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+
+  before_action :check_if_admin, only: [:edit, :new]
+
   def index
     @users =  User.all
   end
@@ -33,7 +37,11 @@ class UsersController < ApplicationController
 
   private
 
+  def check_if_admin
+    redirect_to root_path unless user_signed_in? && current_user.admin == true
+  end
+
   def user_params
-    params.require(:user).permit(:name, :email, :dob, :city, :gender)
+    params.require(:user).permit(:name, :email, :dob, :city, :gender, :userType)
 end
 end

@@ -8,4 +8,9 @@
 Opportunity.destroy_all
 
 
-Opportunity.create(name: "first opp", gender: "Both", description: "some cool opppere", location: "", dateOfEvent: Time.now, user_id: 6)
+Opportunity.create(name: "first opp", gender: "Both", description: "some cool opppere", location: "", dateOfEvent: Time.now, user_id: 8)
+Opportunity.create(name: "second opp", gender: "Both", description: "some cool opppere", location: "", dateOfEvent: Time.now, user_id: 8)
+Opportunity.create(name: "third opp", gender: "Both", description: "some cool opppere", location: "", dateOfEvent: Time.now, user_id: 8)
+Opportunity.create(name: "fourth opp", gender: "Both", description: "some cool opppere", location: "", dateOfEvent: Time.now, user_id: 8)
+Opportunity.create(name: "LOL opp", gender: "Both", description: "some cool opppere", location: "", dateOfEvent: Time.now, user_id: 8)
+Opportunity.create(name: "Yeah opp", gender: "Both", description: "some cool opppere", location: "", dateOfEvent: Time.now, user_id: 8)

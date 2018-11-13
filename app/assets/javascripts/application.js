@@ -15,3 +15,9 @@
 //= require turbolinks
 //= require_tree .
 
+$(document).on('turbolinks:load', function(){
+    console.log('jquery connected!');
+  
+    $('select').formSelect();
+  
+  })

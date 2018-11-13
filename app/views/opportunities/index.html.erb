@@ -2,7 +2,7 @@
 
 <ul>
     <% @opportunities.each do |opportunity| %>
-        <li>
+        <li class="animated slideInUp">
        <%= link_to opportunity.name, opportunity_path(opportunity) %>
         </li>
     <% end %>

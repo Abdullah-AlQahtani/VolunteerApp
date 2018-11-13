@@ -7,5 +7,6 @@ class User < ApplicationRecord
 
   has_many :opportunities
   has_many :app_users
+  
 
 end

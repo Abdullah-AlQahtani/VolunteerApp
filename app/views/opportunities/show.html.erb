@@ -1,3 +1,9 @@
+
+<% if user_signed_in? && current_user.admin == true %>
+    <%= link_to 'Delete opportunity', @opportunity, method: :delete %>
+<% end %>
+
+<br>
 <h1> <%= @opportunity.name %> Event Page</h1>
 
 <p> Creator: <%= @opportunity.user.name %> </p>
@@ -10,14 +16,11 @@
 
 <p> Location: <%= @opportunity.location %> </p>
 
-<% if user_signed_in? && current_user.admin == true %>
-    <%= link_to 'Delete opportunity', @opportunity, method: :delete %>
-<% end %>
-
+<br>
 <%= render partial: 'app' %>
 
 
-<h3>Volunteer List :</h3>
+<h6>Volunteer List :</h6>
 
 <ul>
     <% @opportunity.app_users.each do |app| %>

@@ -1,4 +1,4 @@
-# Tic Tac Toe Game - Project 0
+# iVolunteer - Project 1
 
 ## Table of Contents
 

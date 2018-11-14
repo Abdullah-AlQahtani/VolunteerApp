@@ -1,24 +1,19 @@
-# README
+# Tic Tac Toe Game - Project 0
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Table of Contents
 
-Things you may want to cover:
+* [overview idea](#Overview)
+* [Demo](#Demo)
+* [Credit](#Credit)
 
-* Ruby version
+## Overview
+is a website creating with Ruby on rails. This website connect between volunteers and organizations.
 
-* System dependencies
+## Demo 
+To check the website on Github pages go to https://abdullah-alqahtani.github.io/VolunteerApp/
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Credit
+* Abdullah AlQahtani
+* ME
+* Myself
+* I

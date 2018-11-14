@@ -1,25 +1,18 @@
 <% if current_user.app_users.count > 0 %>
   <% current_user.app_users.each do |app| %>
   <% if app.opportunity_id == @opportunity.id %>
-
-    <%= form_tag leave_opportunity_path(@opportunity), method: :get do |f| %>
-      <%= submit_tag 'Leave Event' %>
+     <%= form_tag leave_opportunity_path(@opportunity), method: :get do |f| %>
+      <%= submit_tag 'Leave Event', class: "btn btn-danger" %>
     <% end %>
-
-  <% else %>
-
-    <%= form_tag join_opportunity_path(@opportunity), method: :get do |f| %>
-      <%= submit_tag 'Join Event' %>
-    <% end %>
-
+   <% else %>
+     <%= form_tag join_opportunity_path(@opportunity), method: :get do |f| %>
+      <%= submit_tag 'Join Event', class: "btn btn-primary" %>
+      <%= current_user.app_users.count %>
+     <% end %>
+   <% end %>
   <% end %>
-  <% end %>
-
-  <% else %>
+   <% else %>
     <%= form_tag join_opportunity_path(@opportunity), method: :get do |f| %>
-      <%= submit_tag 'Join Event' %>
+      <%= submit_tag 'Join Event', class: "btn btn-primary" %>
     <% end %>
 <% end %>
-
-
-

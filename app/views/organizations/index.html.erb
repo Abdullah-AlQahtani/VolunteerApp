@@ -1,10 +1,17 @@
-<h2>All Organizations List</h2>
+<br>
+<h2 class="center">All Organizations List</h2>
 
     
-<ul>
+
+<div class="card-columns">
     <% @organizations.each do |organization| %>
-        <li>
-       <%= link_to organization.name, organization_path(organization) %>
-        </li>
+
+<div class="card animated slideInUp" style="width: 30rem;">
+     <div class="card-body">
+         <h5 class="card-title"><%= organization.name %></h5>
+         <p class="card-text">City : <%= organization.city %></p>
+           <%= link_to "show", organization_path(organization) %>
+    </div>
+    </div>
     <% end %>
-</ul>
+</div>

@@ -1,9 +1,22 @@
-<h2>All opprtunities List</h2>
-
-<ul>
-    <% @opportunities.each do |opportunity| %>
-        <li class="animated slideInUp">
-       <%= link_to opportunity.name, opportunity_path(opportunity) %>
-        </li>
+<br>
+    <% if current_user.admin? || current_user.userType == "organization" %>
+    <div class="center">
+    <%= link_to 'Create new opportunity', new_opportunity_path,class: "btn btn-primary" %>
+    </div>
     <% end %>
-</ul>
+    <br>
+<h2 class="center">All opprtunities List</h2>
+<br>
+<div class="card-columns">
+    <% @opportunities.each do |opportunity| %>
+    <br>
+    <br>
+    <div class="card animated slideInUp" style="width: 30rem; height: 11rem;">
+     <div class="card-body">
+         <h5 class="card-title"><%= opportunity.name %></h5>
+         <p class="card-text"><%= opportunity.description %></p>
+         <%= link_to "Join Event", opportunity_path(opportunity) %>
+    </div>
+    </div>
+    <% end %>
+</div>

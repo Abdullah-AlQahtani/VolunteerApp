@@ -1,6 +1,18 @@
-<h1> <%= @organization.name %> Profile Page</h1>
+ <%= link_to 'Back to Organizations', organizations_path, class: "btn btn-success" %>
+
+<h1 class="animated infinite fadeIn" style="color:green;"> <%= @organization.name %></h1>
 
 <p> Name: <%= @organization.name %> </p>
 
 
 <p> City: <%= @organization.city %> </p>
+
+<br>
+<h5> List of Volunteer Opportunties: </h5>
+<ul>
+    <% @organization.opportunities.each do |opportunity| %>
+        <li>
+       <%= link_to opportunity.name, opportunity_path(opportunity) %>
+        </li>
+    <% end %>
+</ul>

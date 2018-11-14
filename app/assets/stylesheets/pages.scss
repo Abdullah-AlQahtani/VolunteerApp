@@ -3,41 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
     font-family: monospace;
-    margin: 80px 40px;
+    margin: 40px 40px;
   }
   
-  nav {
-    background: #16161d;
-    color: #f8f8ff;
-    height: 80px;
-    line-height: 80px;
-    display: flex;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    box-shadow: 0 0 5px #16161d;
-  }
-  
-  nav a,
-  nav span {
-    flex-grow: 1;
-    color: #f8f8ff;
-    background: #16161d;
-    transition: all 0.3s;
-    text-decoration-color: dodgerblue;
-  }
-  
-  nav a:hover,
-  nav span:hover {
-    background: #f8f8ff;
-    color: #16161d;
-    text-decoration-color: hotpink;
-  }
-
-  h1 {
-      color: green;
-      font-size: 20px;
-      font-weight: 100;
-  }

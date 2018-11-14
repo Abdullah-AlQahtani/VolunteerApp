@@ -1,9 +1,23 @@
 <div class="container">
 <br>
-<h1 style="color:green;"> <%= @user.name %> Profile Page</h1>
+ <%= link_to 'Back to Volunteers', users_path, class: "btn btn-success" %>
 
-<%= link_to "Edit Logged In User", edit_user_registration_path %>
+<% if @user.id == current_user.id %>
+    <%= link_to "Edit User", edit_user_registration_path, class: "btn btn-success" %>
+<% end %>
 
+    <% if current_user.admin? %>
+    <% u = User.find(params[:id]) %>
+    <%= link_to 'Delete User', "/users/#{@user.id}",class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure you want to delete #{u.name}?"}  %>
+    <% end %>
+
+<br>
+<br>
+
+<h1 class="animated infinite fadeIn" style="color:green;"> <%= @user.name %> Profile Page</h1>
+
+<br>
+<br>
 
 <p> Name: <%= @user.name %> </p>
 
@@ -17,8 +31,14 @@
 
 <p> City: <%= @user.city %> </p>
 
-
-<p> Image: <img src="<%= @user.image %>"> </p>
+<h3> List of Volunteer Opportunties: </h3>
+<ul>
+    <% @user.opportunities.each do |opportunity| %>
+        <li>
+       <%= link_to opportunity.name, opportunity_path(opportunity) %>
+        </li>
+    <% end %>
+</ul>
 
 </div>
 

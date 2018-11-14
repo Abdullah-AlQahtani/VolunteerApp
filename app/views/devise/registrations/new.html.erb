@@ -19,7 +19,7 @@
 
 <div class="field">
   <%= f.label :gender %><br />
-  <%= f.select :gender, ['Male', 'Female']%>
+  <%= f.select :gender, ['Male', 'Female','None']%>
 </div>
 
 <br>
@@ -57,7 +57,7 @@
   <%= f.label :userType %><br />
   <%= f.select :userType, ['organization', 'volunteer']%>
 </div>
-
+<br>
     <div class="field">
     <%= f.label :image %>
     <%= f.file_field :image %>

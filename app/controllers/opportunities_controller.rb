@@ -1,8 +1,5 @@
 class OpportunitiesController < ApplicationController
   before_action :authenticate_user!
-  before_action :check_if_organization, only: [:edit, :new, :create, :update]
-  before_action :check_if_admin, only: [:edit, :new, :create, :destroy, :update]
-
 
   
   def index
@@ -30,7 +27,7 @@ class OpportunitiesController < ApplicationController
   def create
     @opportunity = Opportunity.create opportunity_params
     # @opportunity = current_user.opportunities.create opportunity_params
-    redirect_to opportunity_path(@opportunity)
+    redirect_to opportunities_path
     lol = current_user.app_users.create(app_params)
   end
 
@@ -48,7 +45,7 @@ class OpportunitiesController < ApplicationController
   def join
     AppUser.create(opportunity_id: params[:id], user_id: current_user.id)
     redirect_to request.referer
-  end
+end
 
   def leave
     application = AppUser.find_by(user_id: current_user.id, opportunity_id: params[:id])
